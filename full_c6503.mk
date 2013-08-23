@@ -33,12 +33,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=480
 
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.secure=0 \
+    ro.adb.secure=1 \
+
 SOMC_CFG_SENSORS_LIGHT_LM3533 := yes
 SOMC_CFG_SENSORS_LIGHT_MAXRANGE := 1000
 SOMC_CFG_SENSORS_LIGHT_LM3533_PATH := /sys/bus/i2c/devices/0-0036
-
 SOMC_CFG_SENSORS_PROXIMITY_APDS9702 := yes
-
 SOMC_CFG_SENSORS_ACCEL_BMA250_INPUT := yes
+SOMC_CFG_SENSORS_GYRO_MPU3050 := yes
+SOMC_CFG_SENSORS_COMPASS_AK8963 := yes
 
 $(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
